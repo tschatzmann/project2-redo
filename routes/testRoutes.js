@@ -51,8 +51,8 @@ router.post('/member/:id/update', member_controller.member_update_post);
 
 // GET request for list of all members.
 router.get('/member/profile', member_controller.member_detail_get);
-;
+
 // GET request for list of all members.
-router.post('/submitQuestions/', member_controller.member_update_get);
-;
+router.post('/submitQuestions/', member_controller.member_update_post);
+
 module.exports = router;

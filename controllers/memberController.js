@@ -48,8 +48,9 @@ exports.member_create_post = function (req,res){
           .then(function (dbMember) {
             //getMatches(req.body);
             console.log("dbMember", dbMember);
+            userLoginId = dbMember.id;
             // If the member was updated successfully, send it back to the client
-            res.render("index", dbMember);
+            res.render("profile", dbMember);
           })
           .catch(function (err) {
             // If an error occurs, send it back to the client
@@ -57,7 +58,7 @@ exports.member_create_post = function (req,res){
             console.log(res.json(err));
           });
      // });
-      res.render("profile");
+     // res.render("profile");
 };
 
 exports.member_create_get = function (req,res){
