@@ -142,50 +142,9 @@ let userLoginId = "";
 //     });
 // });
 
-// app.post("/registerSubmit", function (req, res) {
-//   // Create a new member in the database
-//   Members.create(req.body)
-//     .then(function (dbMember) {
-//       //getMatches(req.body);
-//       console.log("dbMember", dbMember);
-//       // If the member was updated successfully, send it back to the client
-//       res.render("index", dbMember);
-//     })
-//     .catch(function (err) {
-//       // If an error occurs, send it back to the client
-//       console.log("There was an error signing up!");
-//       console.log(res.json(err));
-//     });
-// });
 
-// app.post("/submitQuestions/", function (req, res) {
-//   console.log('in submitQueustions');
-//   a = req.body.answers;
-//   //let a = [1,3,4,1,3,4,5,3,1,]
-//   id = userLoginId;
-//   console.log(id);
-//   console.log(a);
-//   console.log('before mongo call')
-//   debugger;
-//   Members.findOneAndUpdate(
-//     { _id: id },
-//     {
-//       answers: a
-//     }
-//   ).then(function (dbMember) {
-//     debugger;
-//     console.log('return from mongo call')
-//     console.log(dbMember);
-//     dbMember.answers = a;
-//     console.log('calling matches')
-//     res.render("matches", dbMember);
-//   })
-//     .catch(function (err) {
-//       // If an error occurs, send it back to the client
-//       console.log("There was an error saving your answers!");
-//       // console.log(res.json(err));
-//     })
-// });
+
+
 
 // a = Object.values(req.body);
 // id = req.params.id;
@@ -194,7 +153,7 @@ let userLoginId = "";
 // console.log(a);
 // //
 //   questionsUpdate(a, id);
-//   res.render("index", dbMember);
+//   res.render("index", dbMember);ß
 //})
 // }
 // );

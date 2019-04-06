@@ -29,10 +29,10 @@ router.get('/', member_controller.index);
 /// member ROUTES ///
 
 // GET request for creating member. NOTE This must come before route for id (i.e. display member).
-router.get('/member/create', member_controller.member_create_get);
+router.post('/registerSubmit/', member_controller.member_create_post);
 
 // POST request for creating member.
-router.post('/member/create', member_controller.member_create_post);
+router.get('/member/register', member_controller.member_create_get);
 
 // GET request to delete member.
 router.get('/member/:id/delete', member_controller.member_delete_get);
@@ -47,9 +47,12 @@ router.get('/member/:id/update', member_controller.member_update_get);
 router.post('/member/:id/update', member_controller.member_update_post);
 
 // GET request for one member.
-router.get('/member/:id', member_controller.member_detail);
+//router.get('/member/:id', member_controller.member_detail);
 
 // GET request for list of all members.
-router.get('/members', member_controller.member_list);
-
+router.get('/member/profile', member_controller.member_detail_get);
+;
+// GET request for list of all members.
+router.post('/submitQuestions/', member_controller.member_update_get);
+;
 module.exports = router;
