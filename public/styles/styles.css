@@ -7,7 +7,7 @@ margin: 20px auto;
 width: 90%;
 }
 
-#home, #question-base, #matches {
+#home, #question-base, #matches, #questions {
   background-color: aquamarine;
   font-family: cursive;
   text-align: inherit;

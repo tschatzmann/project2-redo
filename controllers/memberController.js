@@ -25,11 +25,11 @@ exports.member_detail_get = function (req,res){
       if (dbMember.password === req.body.loginPassword) {
         app.locals.user = dbMember;
         app.locals.id = dbMember.id;
-        res.render("profile", app.locals.user);
+        res.redirect("profile", app.locals.user);
       } else {
-        console.log("Wrong password!");
+        return("Wrong password!");
         app.locals.user = dbMember;
-        res.render("404", app.locals.user);
+        res.redirect("404", app.locals.user);
       }
     })
     .catch(function (err) {
@@ -94,7 +94,7 @@ exports.member_update_post = function (req,res){
           console.log(dbMember);
           dbMember.answers = a;
           console.log('calling matches')
-          res.render("matches", dbMember);
+          res.redirect("matches", dbMember);
         })
           .catch(function (err) {
             // If an error occurs, send it back to the client
