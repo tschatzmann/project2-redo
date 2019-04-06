@@ -48,7 +48,9 @@ var UserSchema = new Schema({
   email: {
     type: String,
     unique: true,
-    match: emailVaildation()
+    match: emailVaildation() //[/.+@.+\..+/, "Please enter a valid e-mail address."]
+    
+   
   },
   answers: {
     type: Array,
@@ -94,10 +96,10 @@ var UserSchema = new Schema({
 //   return this.isCool;
 // };
 
-//email vaildation
+// email vaildation -- had modal box reconfig....
 function emailVaildation() {
   var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  if (!re.test(userEmail)) {
+  if (!re.test(UserSchema)) {
     $('#email').addClass('is-invalid');
     var message = 'Please enter vaild email.'
     $('#error').empty().append(message);
