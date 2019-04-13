@@ -48,7 +48,7 @@ var UserSchema = new Schema({
   email: {
     type: String,
     unique: true,
-    match: emailVaildation()
+    match: [/.+@.+\..+/, "Please enter a valid e-mail address."]
   },
   answers: {
     type: Array,
@@ -95,17 +95,17 @@ var UserSchema = new Schema({
 // };
 
 //email vaildation
-function emailVaildation() {
-  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  if (!re.test(userEmail)) {
-    $('#email').addClass('is-invalid');
-    var message = 'Please enter vaild email.'
-    $('#error').empty().append(message);
-    console.log(message);
-  } else {
-    $('#email').removeClass('is-invalid');
-  }
-};
+// function emailVaildation() {
+//   var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+//   if (!re.test(userEmail)) {
+//     $('#email').addClass('is-invalid');
+//     var message = 'Please enter valid email.'
+//     $('#error').empty().append(message);
+//     console.log(message);
+//   } else {
+//     $('#email').removeClass('is-invalid');
+//   }
+// };
 
 // This creates our model from the above schema, using mongoose's model method
 var Members = mongoose.model("members", UserSchema);

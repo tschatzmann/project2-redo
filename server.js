@@ -7,6 +7,7 @@ var logger = require("morgan");
 var app = express();
 var app = require('./public/js/app')
 var http = require('http');
+app.use(express.static('public'));
 var PORT = process.env.PORT || 3030;
 
 console.log('in server');
