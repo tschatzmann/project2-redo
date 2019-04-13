@@ -5,6 +5,7 @@
 body {max-width: 1200px;
 margin: 20px auto;
 width: 90%;
+background-image: url(../images/background.jpg);
 }
 
 #home, #question-base, #matches, #questions {
